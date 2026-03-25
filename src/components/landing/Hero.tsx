@@ -1,6 +1,7 @@
 import Link from "@docusaurus/Link";
-import Translate, { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 import { Button } from "@/components/ui/button";
+import { DownloadButton } from "./DownloadButton";
 
 export function Hero() {
   return (
@@ -59,11 +60,7 @@ export function Hero() {
 
       {/* CTAs */}
       <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 mb-5">
-        <Button size="lg" className="shadow-lg shadow-primary/25" asChild>
-          <a href="#">
-            <Translate id="hero.cta.download">Download for macOS</Translate>
-          </a>
-        </Button>
+        <DownloadButton />
         <Button variant="outline" size="lg" asChild>
           <Link to="/docs/getting-started/installation" className="no-underline">
             <Translate id="hero.cta.docs">Read the Docs</Translate>

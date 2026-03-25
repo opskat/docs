@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Check for new releases daily at 06:00 UTC
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -30,6 +33,13 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+
+      # Fetch latest release info from opskat/opskat before building
+      - name: Fetch latest release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-release.mjs
+
       - run: pnpm build
 
       - uses: actions/upload-pages-artifact@v3

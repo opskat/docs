@@ -1,5 +1,6 @@
 import Translate from "@docusaurus/Translate";
 import { Button } from "@/components/ui/button";
+import { DownloadButton } from "./DownloadButton";
 
 export function CTA() {
   return (
@@ -21,12 +22,8 @@ export function CTA() {
             infrastructure with AI.
           </Translate>
         </p>
-        <div className="flex gap-3 justify-center">
-          <Button className="py-3 px-7 text-[15px] shadow-lg shadow-primary/25" asChild>
-            <a href="#">
-              <Translate id="cta.download">Download</Translate>
-            </a>
-          </Button>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <DownloadButton />
           <Button variant="outline" className="py-3 px-7 text-[15px]" asChild>
             <a
               href="https://github.com/opskat/opskat"

@@ -110,6 +110,12 @@
   "hero.cta.download": {
     "message": "下载 macOS 版"
   },
+  "hero.cta.download.prefix": {
+    "message": "下载"
+  },
+  "hero.cta.download.current": {
+    "message": "当前"
+  },
   "hero.cta.docs": {
     "message": "阅读文档"
   },
