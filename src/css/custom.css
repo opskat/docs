@@ -1,0 +1,219 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is([data-theme='dark'] *));
+
+/* ===== OpsKat Light Theme ===== */
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.98 0.003 260);
+  --foreground: oklch(0.145 0.014 260);
+  --card: oklch(0.995 0.001 260);
+  --card-foreground: oklch(0.145 0.014 260);
+  --popover: oklch(0.995 0.001 260);
+  --popover-foreground: oklch(0.145 0.014 260);
+  --primary: oklch(0.49 0.20 260);
+  --primary-foreground: oklch(0.985 0.003 260);
+  --secondary: oklch(0.955 0.008 260);
+  --secondary-foreground: oklch(0.25 0.012 260);
+  --muted: oklch(0.955 0.006 260);
+  --muted-foreground: oklch(0.48 0.01 260);
+  --accent: oklch(0.955 0.012 260);
+  --accent-foreground: oklch(0.25 0.012 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.91 0.006 260);
+  --input: oklch(0.91 0.006 260);
+  --ring: oklch(0.49 0.20 260);
+  --success: oklch(0.62 0.17 155);
+  --warning: oklch(0.75 0.15 85);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Menlo, monospace;
+
+  /* Docusaurus Infima variable overrides */
+  --ifm-color-primary: oklch(0.49 0.20 260);
+  --ifm-color-primary-dark: oklch(0.44 0.20 260);
+  --ifm-color-primary-darker: oklch(0.41 0.20 260);
+  --ifm-color-primary-darkest: oklch(0.35 0.20 260);
+  --ifm-color-primary-light: oklch(0.54 0.20 260);
+  --ifm-color-primary-lighter: oklch(0.57 0.20 260);
+  --ifm-color-primary-lightest: oklch(0.63 0.20 260);
+  --ifm-background-color: oklch(0.98 0.003 260);
+  --ifm-font-color-base: oklch(0.145 0.014 260);
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Menlo, monospace;
+}
+
+/* ===== OpsKat Dark Theme ===== */
+[data-theme='dark'] {
+  --background: oklch(0.135 0.012 260);
+  --foreground: oklch(0.93 0.005 260);
+  --card: oklch(0.17 0.014 260);
+  --card-foreground: oklch(0.93 0.005 260);
+  --popover: oklch(0.17 0.014 260);
+  --popover-foreground: oklch(0.93 0.005 260);
+  --primary: oklch(0.67 0.16 260);
+  --primary-foreground: oklch(0.135 0.012 260);
+  --secondary: oklch(0.21 0.012 260);
+  --secondary-foreground: oklch(0.93 0.005 260);
+  --muted: oklch(0.21 0.014 260);
+  --muted-foreground: oklch(0.63 0.01 260);
+  --accent: oklch(0.23 0.018 260);
+  --accent-foreground: oklch(0.93 0.005 260);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.67 0.16 260);
+  --success: oklch(0.72 0.19 155);
+  --warning: oklch(0.8 0.15 85);
+
+  /* Docusaurus Infima variable overrides (dark) */
+  --ifm-color-primary: oklch(0.67 0.16 260);
+  --ifm-color-primary-dark: oklch(0.62 0.16 260);
+  --ifm-color-primary-darker: oklch(0.59 0.16 260);
+  --ifm-color-primary-darkest: oklch(0.53 0.16 260);
+  --ifm-color-primary-light: oklch(0.72 0.16 260);
+  --ifm-color-primary-lighter: oklch(0.75 0.16 260);
+  --ifm-color-primary-lightest: oklch(0.81 0.16 260);
+  --ifm-background-color: oklch(0.135 0.012 260);
+  --ifm-font-color-base: oklch(0.93 0.005 260);
+}
+
+/* ===== Tailwind Theme Mapping ===== */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-family-sans: var(--font-sans);
+  --font-family-mono: var(--font-mono);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  html {
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.5 0 0 / 20%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.5 0 0 / 35%);
+  }
+  [data-theme='dark'] ::-webkit-scrollbar-thumb {
+    background: oklch(0.8 0 0 / 15%);
+  }
+  [data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.8 0 0 / 30%);
+  }
+
+  /* Custom selection */
+  ::selection {
+    background: oklch(0.67 0.16 260 / 30%);
+  }
+}
+
+/* ===== Landing Page Styles ===== */
+
+/* Tech grid lines overlay */
+.landing-grid {
+  background-image:
+    linear-gradient(oklch(0.5 0.08 260 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.5 0.08 260 / 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(180deg, black 0%, rgba(0,0,0,0.3) 40%, transparent 70%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, rgba(0,0,0,0.3) 40%, transparent 70%);
+}
+
+[data-theme='dark'] .landing-grid {
+  background-image:
+    linear-gradient(oklch(0.67 0.16 260 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.67 0.16 260 / 0.08) 1px, transparent 1px);
+}
+
+/* Landing page gradient background — cinematic depth */
+.landing-page {
+  background:
+    linear-gradient(
+      180deg,
+      oklch(0.98 0.003 260) 0%,
+      oklch(0.975 0.005 265) 30%,
+      oklch(0.98 0.003 260) 60%,
+      oklch(0.975 0.005 265) 85%,
+      oklch(0.98 0.003 260) 100%
+    );
+}
+
+[data-theme='dark'] .landing-page {
+  background:
+    linear-gradient(
+      180deg,
+      oklch(0.10 0.02 265) 0%,
+      oklch(0.12 0.018 260) 8%,
+      oklch(0.135 0.015 258) 25%,
+      oklch(0.13 0.018 262) 45%,
+      oklch(0.125 0.02 265) 60%,
+      oklch(0.135 0.015 260) 75%,
+      oklch(0.13 0.018 258) 90%,
+      oklch(0.12 0.02 262) 100%
+    );
+}
+
+/* Feature cards — glow border on hover in dark mode */
+[data-theme='dark'] .feature-card-glow:hover {
+  border-color: oklch(0.67 0.16 260 / 0.3);
+  box-shadow: 0 0 20px oklch(0.67 0.16 260 / 0.08), inset 0 1px 0 oklch(1 0 0 / 0.05);
+}
+
+/* Section divider glow line */
+.section-glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(0.67 0.16 260 / 0.3), transparent);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+[data-theme='light'] .section-glow-divider {
+  background: linear-gradient(90deg, transparent, oklch(0.5 0.1 260 / 0.2), transparent);
+}

@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "最新",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "快速上手",
+    "description": "The label for category 'Getting Started' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Guide": {
+    "message": "使用指南",
+    "description": "The label for category 'Guide' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.CLI Reference": {
+    "message": "CLI 参考",
+    "description": "The label for category 'CLI Reference' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Development": {
+    "message": "开发",
+    "description": "The label for category 'Development' in sidebar 'docs'"
+  }
+}
