@@ -38,7 +38,7 @@ sidebar_label: 从源码构建
 | `make build-cli` | 构建 CLI 到 `./build/bin/opsctl` |
 | `make build-cli-upx` | 使用 UPX 压缩构建 CLI |
 | `make install-cli` | 安装 CLI 到 `$GOPATH/bin` |
-| `make install-skill` | 安装 Claude Code 技能（创建符号链接到 `~/.claude/skills/opsctl`） |
+| `make install-skill` | 安装 Claude Code 插件（注册到 `~/.claude/plugins/`） |
 
 ### 质量保障
 

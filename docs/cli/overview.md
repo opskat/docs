@@ -54,6 +54,7 @@ Assets can be referenced in all commands by:
 | Command | Description |
 |---------|-------------|
 | [`exec`](./exec.md) | Execute a shell command on a remote server via SSH |
+| [`batch`](./batch.md) | Execute multiple commands in parallel (exec/sql/redis) |
 | [`ssh`](./ssh.md) | Open an interactive SSH terminal session |
 | [`cp`](./cp.md) | Copy files between local and remote servers (scp-style) |
 | [`sql`](./sql.md) | Execute SQL on a database asset (MySQL, PostgreSQL) |
@@ -64,6 +65,7 @@ Assets can be referenced in all commands by:
 | `get` | Get detailed information about a resource |
 | `create` | Create a new asset (ssh, database, or redis) |
 | `update` | Update an existing asset |
+| `init` | Discover server environment and update asset description |
 | `version` | Print version information |
 
 ## Approval and Sessions
@@ -72,7 +74,7 @@ Write operations (`exec`, `cp`, `sql`, `redis`, `create`, `update`) require appr
 
 1. **Policy check** — the command is checked against the asset's policy (allow-list / deny-list)
 2. **Grant matching** — if a pre-approved grant pattern matches, the command is allowed
-3. **Desktop app approval** — if neither policy nor grant matches, a dialog is shown in the desktop app
+3. **Desktop app approval** — if neither policy nor grant matches, a dialog is shown in the desktop app. Multiple concurrent requests are automatically queued into a single dialog with "Approve All" / "Deny All" options
 
 Sessions group multiple operations under a single approval scope. They are auto-created on the first write operation and stored in `.opskat/sessions/` in the current directory. Sessions expire after 24 hours.
 

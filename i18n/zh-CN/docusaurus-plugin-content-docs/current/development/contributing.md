@@ -120,7 +120,7 @@ opskat/
 │       ├── i18n/               # i18next 翻译文件
 │       ├── lib/                # 工具函数
 │       └── wailsjs/            # 生成的 Wails TypeScript 绑定
-└── skill/                      # Claude Code 技能定义
+└── plugin/                     # Claude Code 插件（技能：/opsctl、/opsctl:init）
 ```
 
 ## 如何添加新的资产类型

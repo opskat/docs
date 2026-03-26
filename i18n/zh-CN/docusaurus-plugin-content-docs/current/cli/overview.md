@@ -54,6 +54,7 @@ make install-cli      # Install to $GOPATH/bin
 | 命令 | 说明 |
 |------|------|
 | [`exec`](./exec.md) | 通过 SSH 在远程服务器上执行 Shell 命令 |
+| [`batch`](./batch.md) | 并行执行多条命令（exec/sql/redis） |
 | [`ssh`](./ssh.md) | 打开交互式 SSH 终端会话 |
 | [`cp`](./cp.md) | 在本地与远程服务器之间复制文件（类似 scp） |
 | [`sql`](./sql.md) | 在数据库资产上执行 SQL（MySQL、PostgreSQL） |
@@ -64,6 +65,7 @@ make install-cli      # Install to $GOPATH/bin
 | `get` | 获取资源的详细信息 |
 | `create` | 创建新资产（SSH、数据库或 Redis） |
 | `update` | 更新已有资产 |
+| `init` | 发现服务器环境并更新资产描述 |
 | `version` | 输出版本信息 |
 
 ## 审批与会话
@@ -72,7 +74,7 @@ make install-cli      # Install to $GOPATH/bin
 
 1. **策略检查** — 命令会根据资产的策略（白名单/黑名单）进行检查
 2. **授权匹配** — 如果存在匹配的预审批授权模式，命令将被放行
-3. **桌面应用审批** — 如果策略和授权均未匹配，将在桌面应用中弹出审批对话框
+3. **桌面应用审批** — 如果策略和授权均未匹配，将在桌面应用中弹出审批对话框。多个并发请求会自动排队到同一个弹窗中，支持"全部允许"/"全部拒绝"操作
 
 会话将多个操作归入同一审批范围。会话在首次写操作时自动创建，存储在当前目录的 `.opskat/sessions/` 中。会话有效期为 24 小时。
 

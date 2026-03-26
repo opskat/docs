@@ -38,7 +38,7 @@ All commands are run from the project root (`opskat/`).
 | `make build-cli` | Build CLI to `./build/bin/opsctl` |
 | `make build-cli-upx` | Build CLI with UPX compression |
 | `make install-cli` | Install CLI to `$GOPATH/bin` |
-| `make install-skill` | Install Claude Code skill (symlink to `~/.claude/skills/opsctl`) |
+| `make install-skill` | Install Claude Code plugin (register to `~/.claude/plugins/`) |
 
 ### Quality
 

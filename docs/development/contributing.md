@@ -120,7 +120,7 @@ opskat/
 │       ├── i18n/               # i18next translations
 │       ├── lib/                # Utility functions
 │       └── wailsjs/            # Generated Wails TypeScript bindings
-└── skill/                      # Claude Code skill definitions
+└── plugin/                     # Claude Code plugin (skills: /opsctl, /opsctl:init)
 ```
 
 ## How to Add a New Asset Type

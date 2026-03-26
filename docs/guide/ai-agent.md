@@ -88,12 +88,28 @@ See [Policy Enforcement](/docs/guide/policy) for details on configuring rules.
 
 ## AI Coding Tool Integration
 
-OpsKat integrates with AI coding CLIs like **Claude Code** and **Codex**. One-click skill installation from the Settings page teaches these AI assistants how to use `opsctl`, enabling them to directly manage servers, run commands, transfer files, and query databases.
+OpsKat integrates with AI coding CLIs like **Claude Code**, **Codex**, **OpenCode**, and **Gemini CLI**. Skill/plugin installation teaches these AI assistants how to use `opsctl`, enabling them to directly manage servers, run commands, transfer files, and query databases.
 
 ### Installing Skills
 
 1. Open **Settings** and go to the **AI** tab.
-2. Click **Install** next to Claude Code or Codex.
-3. The skill file is symlinked to the appropriate location (e.g., `~/.claude/skills/opsctl` for Claude Code).
+2. Click **Install** next to the target AI tool.
+
+For **Claude Code**, this installs a plugin (to `~/.claude/plugins/`) that provides two skill commands:
+
+| Command | Description |
+|---|---|
+| `/opsctl` | Full opsctl CLI reference — asset management, exec, ssh, cp, sql, redis, grant, session |
+| `/opsctl:init` | Server environment auto-discovery — scans a server via SSH and generates a structured description |
+
+Other tools install skill files to their standard locations:
+
+| Tool | Install Path |
+|---|---|
+| Codex | `~/.agents/skills/opsctl/` |
+| OpenCode | `~/.config/opencode/skills/opsctl/` |
+| Gemini CLI | `~/.gemini/extensions/opsctl/` |
+
+Skills are automatically updated when the desktop app is updated.
 
 Once installed, these AI coding tools can use `opsctl` commands as part of their workflow, with all operations routed through OpsKat's policy and audit pipeline.
