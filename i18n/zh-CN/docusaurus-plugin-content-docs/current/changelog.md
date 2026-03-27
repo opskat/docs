@@ -42,7 +42,7 @@ sidebar_position: 100
 
 ### 其他
 
-- 添加 MIT 许可证
+- 添加 GPLv3 许可证
 - 更新 README 链接至 opskat.github.io
 - 新增审批按钮和批量操作的 i18n 翻译
 

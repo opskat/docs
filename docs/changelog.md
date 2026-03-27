@@ -42,7 +42,7 @@ sidebar_position: 100
 
 ### Other
 
-- Added MIT License.
+- Added GPLv3 License.
 - Updated README links to opskat.github.io.
 - Added i18n translations for approval buttons and batch operations.
 
